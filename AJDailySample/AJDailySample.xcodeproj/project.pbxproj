@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		301FCD1722017B0100F3EE4F /* AJCoreImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 301FCD1622017B0100F3EE4F /* AJCoreImageViewController.m */; };
 		307B5DC621CD0918008190CE /* demo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 307B5DC521CD0918008190CE /* demo.jpg */; };
+		30D267D62216A5C900203AE1 /* AJJSCoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D267D52216A5C900203AE1 /* AJJSCoreViewController.m */; };
 		FF939C4021FC03A900F55B9C /* AJCoreGraphicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF939C3F21FC03A900F55B9C /* AJCoreGraphicsViewController.m */; };
 		FFB7E2BB21CA9FD10021BB76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB7E2BA21CA9FD10021BB76 /* AppDelegate.m */; };
 		FFB7E2C321CA9FD10021BB76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFB7E2C221CA9FD10021BB76 /* Assets.xcassets */; };
@@ -21,6 +22,8 @@
 		301FCD1522017B0100F3EE4F /* AJCoreImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AJCoreImageViewController.h; sourceTree = "<group>"; };
 		301FCD1622017B0100F3EE4F /* AJCoreImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AJCoreImageViewController.m; sourceTree = "<group>"; };
 		307B5DC521CD0918008190CE /* demo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demo.jpg; sourceTree = "<group>"; };
+		30D267D42216A5C900203AE1 /* AJJSCoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AJJSCoreViewController.h; sourceTree = "<group>"; };
+		30D267D52216A5C900203AE1 /* AJJSCoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AJJSCoreViewController.m; sourceTree = "<group>"; };
 		FF939C3E21FC03A900F55B9C /* AJCoreGraphicsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AJCoreGraphicsViewController.h; sourceTree = "<group>"; };
 		FF939C3F21FC03A900F55B9C /* AJCoreGraphicsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AJCoreGraphicsViewController.m; sourceTree = "<group>"; };
 		FFB7E2B621CA9FD10021BB76 /* AJDailySample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AJDailySample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +58,15 @@
 			path = CoreImage;
 			sourceTree = "<group>";
 		};
+		30D267D32216A5B200203AE1 /* JavascriptCore */ = {
+			isa = PBXGroup;
+			children = (
+				30D267D42216A5C900203AE1 /* AJJSCoreViewController.h */,
+				30D267D52216A5C900203AE1 /* AJJSCoreViewController.m */,
+			);
+			path = JavascriptCore;
+			sourceTree = "<group>";
+		};
 		FF939C3D21FC038200F55B9C /* CoreGraphics */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +95,7 @@
 		FFB7E2B821CA9FD10021BB76 /* AJDailySample */ = {
 			isa = PBXGroup;
 			children = (
+				30D267D32216A5B200203AE1 /* JavascriptCore */,
 				301FCD1422017AD300F3EE4F /* CoreImage */,
 				FF939C3D21FC038200F55B9C /* CoreGraphics */,
 				FFC426F621CBF330007CE746 /* ImageIO */,
@@ -139,7 +152,7 @@
 				TargetAttributes = {
 					FFB7E2B521CA9FD10021BB76 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -184,6 +197,7 @@
 				FFC426F921CBF330007CE746 /* AJImageIOViewController.m in Sources */,
 				FFB7E2D121CAA0EF0021BB76 /* AJViewController.m in Sources */,
 				FFB7E2BB21CA9FD10021BB76 /* AppDelegate.m in Sources */,
+				30D267D62216A5C900203AE1 /* AJJSCoreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,8 +313,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 493CYJF6RN;
 				INFOPLIST_FILE = AJDailySample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -316,8 +331,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 493CYJF6RN;
 				INFOPLIST_FILE = AJDailySample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
