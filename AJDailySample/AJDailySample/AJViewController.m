@@ -23,9 +23,10 @@
     
     self.title = @"iOS Daily Sample";
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationController.navigationBar.translucent = NO;
     
-    self.dataSource = @[@"CoreGraphics", @"ImageIO", @"CoreImage", @"JavaScriptCore", @"AssetLibrary", @"PhotoKit", @"GCD", @"RunLoop", @"OCRunTime", @"WebKit"];
-    self.targetControllerArr = @[@"AJCoreGraphicsViewController",@"AJImageIOViewController", @"AJCoreImageViewController", @"AJJSCoreViewController"];
+    self.dataSource = @[@"CoreGraphics", @"ImageIO", @"CoreImage", @"JavaScriptCore", @"WebKit", @"AssetLibrary", @"PhotoKit", @"GCD", @"RunLoop", @"OCRunTime"];
+    self.targetControllerArr = @[@"AJCoreGraphicsViewController",@"AJImageIOViewController", @"AJCoreImageViewController", @"AJJSCoreViewController", @"AJWKWebViewController"];
     
     self.tableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
     self.tableView.delegate = self;

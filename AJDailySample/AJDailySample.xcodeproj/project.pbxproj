@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		301A89632246502700309490 /* AJWKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 301A89622246502700309490 /* AJWKWebViewController.m */; };
 		301FCD1722017B0100F3EE4F /* AJCoreImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 301FCD1622017B0100F3EE4F /* AJCoreImageViewController.m */; };
 		307B5DC621CD0918008190CE /* demo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 307B5DC521CD0918008190CE /* demo.jpg */; };
 		30D267D62216A5C900203AE1 /* AJJSCoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D267D52216A5C900203AE1 /* AJJSCoreViewController.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		301A89612246502700309490 /* AJWKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJWKWebViewController.h; sourceTree = "<group>"; };
+		301A89622246502700309490 /* AJWKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJWKWebViewController.m; sourceTree = "<group>"; };
 		301FCD1522017B0100F3EE4F /* AJCoreImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AJCoreImageViewController.h; sourceTree = "<group>"; };
 		301FCD1622017B0100F3EE4F /* AJCoreImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AJCoreImageViewController.m; sourceTree = "<group>"; };
 		307B5DC521CD0918008190CE /* demo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demo.jpg; sourceTree = "<group>"; };
@@ -49,6 +52,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		301A89602246502700309490 /* WKWebView */ = {
+			isa = PBXGroup;
+			children = (
+				301A89612246502700309490 /* AJWKWebViewController.h */,
+				301A89622246502700309490 /* AJWKWebViewController.m */,
+			);
+			path = WKWebView;
+			sourceTree = "<group>";
+		};
 		301FCD1422017AD300F3EE4F /* CoreImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +111,7 @@
 				301FCD1422017AD300F3EE4F /* CoreImage */,
 				FF939C3D21FC038200F55B9C /* CoreGraphics */,
 				FFC426F621CBF330007CE746 /* ImageIO */,
+				301A89602246502700309490 /* WKWebView */,
 				FFB7E2B921CA9FD10021BB76 /* AppDelegate.h */,
 				FFB7E2BA21CA9FD10021BB76 /* AppDelegate.m */,
 				FFB7E2CF21CAA0EF0021BB76 /* AJViewController.h */,
@@ -194,6 +207,7 @@
 				FF939C4021FC03A900F55B9C /* AJCoreGraphicsViewController.m in Sources */,
 				FFB7E2C921CA9FD10021BB76 /* main.m in Sources */,
 				301FCD1722017B0100F3EE4F /* AJCoreImageViewController.m in Sources */,
+				301A89632246502700309490 /* AJWKWebViewController.m in Sources */,
 				FFC426F921CBF330007CE746 /* AJImageIOViewController.m in Sources */,
 				FFB7E2D121CAA0EF0021BB76 /* AJViewController.m in Sources */,
 				FFB7E2BB21CA9FD10021BB76 /* AppDelegate.m in Sources */,
