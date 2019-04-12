@@ -70,6 +70,7 @@
     CIContext* context = [CIContext contextWithOptions:nil];
     CGImageRef imageRef = [context createCGImage:output fromRect:output.extent];
     self.imageView.image = [UIImage imageWithCGImage:imageRef];
+    CGImageRelease(imageRef);
 }
 
 - (void) imageApplyFilter

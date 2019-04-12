@@ -8,6 +8,7 @@
 
 #import "AJWKWebViewController.h"
 #import <WebKit/WebKit.h>
+#import "AJCustomProtocol.h"
 
 @interface MYTextField : UITextField
 
@@ -29,7 +30,7 @@
 
 @end
 
-@interface AJWKWebViewController ()<UITextFieldDelegate, WKNavigationDelegate>
+@interface AJWKWebViewController ()<UITextFieldDelegate, WKNavigationDelegate,WKScriptMessageHandler, WKURLSchemeHandler>
 
 @property (nonatomic, strong) WKWebView* webView;
 @property (nonatomic, strong) MYTextField* textField;
@@ -39,11 +40,27 @@
 
 @implementation AJWKWebViewController
 
+- (NSString*) docPath
+{
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+}
+
+- (void)filesCopyToDocument
+{
+    NSString* htmlPath = [[NSBundle mainBundle] pathForResource:@"sample" ofType:@"html"];
+    [[NSFileManager defaultManager] copyItemAtPath:htmlPath toPath:[[self docPath] stringByAppendingPathComponent:@"sample.html"] error:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 //    self.title = @"WKWebView Sample";
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    [self filesCopyToDocument];
+    
+    [AJCustomProtocol wk_registerScheme:@"http"];
+    [NSURLProtocol registerClass:[AJCustomProtocol class]];
     
     self.extendedLayoutIncludesOpaqueBars = NO;
 //    self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -69,13 +86,27 @@
     self.progressView.hidden = YES;
     [self.view addSubview:self.progressView];
     
-    self.webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
+    WKWebViewConfiguration* configuration = [WKWebViewConfiguration new];
+//    NSString* injectJS = @"var styleNode = document.createElement('style');styleNode.textContent='.cold-knowledge {display : none};';document.documentElement.appendChild(styleNode);";
+    NSString* injectJS = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"inject" ofType:@"js"] encoding:NSUTF8StringEncoding error:nil];
+    WKUserScript* userScript = [[WKUserScript alloc] initWithSource:injectJS injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
+    [configuration.userContentController addUserScript:userScript];
+    [configuration.userContentController addScriptMessageHandler:self name:@"ShowLinkList"];
+    [configuration.preferences setValue:@YES forKey:@"allowFileAccessFromFileURLs"];
+//    [configuration setURLSchemeHandler:self forURLScheme:@"jsbridge"];
+    self.webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:configuration];
     self.webView.navigationDelegate = self;
     self.webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view insertSubview:self.webView belowSubview:self.progressView];
     
     [self.webView addObserver:self forKeyPath:@"loading" options:NSKeyValueObservingOptionNew context:nil];
     [self.webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
+    
+//    BOOL isHandled = [WKWebView handlesURLScheme:@"jsbridge"];
+    
+    NSString * htmlPath = [[self docPath] stringByAppendingPathComponent:@"sample.html"];
+//    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:htmlPath]]];
+    [self.webView loadFileURL:[NSURL fileURLWithPath:htmlPath] allowingReadAccessToURL:[NSURL fileURLWithPath:[self docPath]]];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
@@ -117,9 +148,36 @@
 {
     [textField resignFirstResponder];
     self.navigationItem.rightBarButtonItem = nil;
-    NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:textField.text]];
-    [self.webView loadRequest:request];
+    
+    if ([textField.text length] > 0)
+    {
+        NSString* txt = textField.text;
+        if (![txt hasPrefix:@"http://"] && ![txt hasPrefix:@"https://"])
+        {
+            txt = [@"http://" stringByAppendingString:txt];
+        }
+        NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:txt]];
+        [self.webView loadRequest:request];
+    }
     return YES;
+}
+
+#pragma mark - WKURLSchemeHandler
+
+- (void)webView:(WKWebView *)webView startURLSchemeTask:(id <WKURLSchemeTask>)urlSchemeTask
+{
+    
+}
+
+- (void)webView:(WKWebView *)webView stopURLSchemeTask:(id <WKURLSchemeTask>)urlSchemeTask
+{
+    
+}
+
+#pragma mark - WKScriptMessageHandler
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message
+{
+    NSLog(@"%@:%@", message.name, message.body);
 }
 
 #pragma mark - WKNavigationDelegate

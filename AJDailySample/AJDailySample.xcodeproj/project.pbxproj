@@ -10,6 +10,11 @@
 		301A89632246502700309490 /* AJWKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 301A89622246502700309490 /* AJWKWebViewController.m */; };
 		301FCD1722017B0100F3EE4F /* AJCoreImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 301FCD1622017B0100F3EE4F /* AJCoreImageViewController.m */; };
 		307B5DC621CD0918008190CE /* demo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 307B5DC521CD0918008190CE /* demo.jpg */; };
+		30872CA22248DA5F006607BE /* sample.html in Resources */ = {isa = PBXBuildFile; fileRef = 30872CA12248DA5E006607BE /* sample.html */; };
+		30872CA62248E341006607BE /* inject.js in Resources */ = {isa = PBXBuildFile; fileRef = 30872CA52248E341006607BE /* inject.js */; };
+		30872CA922490CFF006607BE /* AJCustomProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 30872CA822490CFF006607BE /* AJCustomProtocol.m */; };
+		3096647D2260952F0046EA0F /* AJAssetLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3096647C2260952F0046EA0F /* AJAssetLibraryViewController.m */; };
+		309664802260BAFA0046EA0F /* AJAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3096647F2260BAFA0046EA0F /* AJAlbumViewController.m */; };
 		30D267D62216A5C900203AE1 /* AJJSCoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D267D52216A5C900203AE1 /* AJJSCoreViewController.m */; };
 		FF939C4021FC03A900F55B9C /* AJCoreGraphicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF939C3F21FC03A900F55B9C /* AJCoreGraphicsViewController.m */; };
 		FFB7E2BB21CA9FD10021BB76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB7E2BA21CA9FD10021BB76 /* AppDelegate.m */; };
@@ -25,6 +30,14 @@
 		301FCD1522017B0100F3EE4F /* AJCoreImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AJCoreImageViewController.h; sourceTree = "<group>"; };
 		301FCD1622017B0100F3EE4F /* AJCoreImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AJCoreImageViewController.m; sourceTree = "<group>"; };
 		307B5DC521CD0918008190CE /* demo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demo.jpg; sourceTree = "<group>"; };
+		30872CA12248DA5E006607BE /* sample.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = sample.html; sourceTree = "<group>"; };
+		30872CA52248E341006607BE /* inject.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = inject.js; sourceTree = "<group>"; };
+		30872CA722490CFF006607BE /* AJCustomProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AJCustomProtocol.h; sourceTree = "<group>"; };
+		30872CA822490CFF006607BE /* AJCustomProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AJCustomProtocol.m; sourceTree = "<group>"; };
+		3096647B2260952F0046EA0F /* AJAssetLibraryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AJAssetLibraryViewController.h; sourceTree = "<group>"; };
+		3096647C2260952F0046EA0F /* AJAssetLibraryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AJAssetLibraryViewController.m; sourceTree = "<group>"; };
+		3096647E2260BAFA0046EA0F /* AJAlbumViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AJAlbumViewController.h; sourceTree = "<group>"; };
+		3096647F2260BAFA0046EA0F /* AJAlbumViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AJAlbumViewController.m; sourceTree = "<group>"; };
 		30D267D42216A5C900203AE1 /* AJJSCoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AJJSCoreViewController.h; sourceTree = "<group>"; };
 		30D267D52216A5C900203AE1 /* AJJSCoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AJJSCoreViewController.m; sourceTree = "<group>"; };
 		FF939C3E21FC03A900F55B9C /* AJCoreGraphicsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AJCoreGraphicsViewController.h; sourceTree = "<group>"; };
@@ -57,6 +70,8 @@
 			children = (
 				301A89612246502700309490 /* AJWKWebViewController.h */,
 				301A89622246502700309490 /* AJWKWebViewController.m */,
+				30872CA722490CFF006607BE /* AJCustomProtocol.h */,
+				30872CA822490CFF006607BE /* AJCustomProtocol.m */,
 			);
 			path = WKWebView;
 			sourceTree = "<group>";
@@ -68,6 +83,17 @@
 				301FCD1622017B0100F3EE4F /* AJCoreImageViewController.m */,
 			);
 			path = CoreImage;
+			sourceTree = "<group>";
+		};
+		3096647A226095130046EA0F /* AssetLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				3096647B2260952F0046EA0F /* AJAssetLibraryViewController.h */,
+				3096647C2260952F0046EA0F /* AJAssetLibraryViewController.m */,
+				3096647E2260BAFA0046EA0F /* AJAlbumViewController.h */,
+				3096647F2260BAFA0046EA0F /* AJAlbumViewController.m */,
+			);
+			path = AssetLibrary;
 			sourceTree = "<group>";
 		};
 		30D267D32216A5B200203AE1 /* JavascriptCore */ = {
@@ -107,6 +133,7 @@
 		FFB7E2B821CA9FD10021BB76 /* AJDailySample */ = {
 			isa = PBXGroup;
 			children = (
+				3096647A226095130046EA0F /* AssetLibrary */,
 				30D267D32216A5B200203AE1 /* JavascriptCore */,
 				301FCD1422017AD300F3EE4F /* CoreImage */,
 				FF939C3D21FC038200F55B9C /* CoreGraphics */,
@@ -117,6 +144,8 @@
 				FFB7E2CF21CAA0EF0021BB76 /* AJViewController.h */,
 				FFB7E2D021CAA0EF0021BB76 /* AJViewController.m */,
 				307B5DC521CD0918008190CE /* demo.jpg */,
+				30872CA12248DA5E006607BE /* sample.html */,
+				30872CA52248E341006607BE /* inject.js */,
 				FFB7E2C221CA9FD10021BB76 /* Assets.xcassets */,
 				FFB7E2C721CA9FD10021BB76 /* Info.plist */,
 				FFB7E2C821CA9FD10021BB76 /* main.m */,
@@ -194,6 +223,8 @@
 			files = (
 				FFB7E2C321CA9FD10021BB76 /* Assets.xcassets in Resources */,
 				307B5DC621CD0918008190CE /* demo.jpg in Resources */,
+				30872CA62248E341006607BE /* inject.js in Resources */,
+				30872CA22248DA5F006607BE /* sample.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,10 +238,13 @@
 				FF939C4021FC03A900F55B9C /* AJCoreGraphicsViewController.m in Sources */,
 				FFB7E2C921CA9FD10021BB76 /* main.m in Sources */,
 				301FCD1722017B0100F3EE4F /* AJCoreImageViewController.m in Sources */,
+				30872CA922490CFF006607BE /* AJCustomProtocol.m in Sources */,
 				301A89632246502700309490 /* AJWKWebViewController.m in Sources */,
 				FFC426F921CBF330007CE746 /* AJImageIOViewController.m in Sources */,
+				3096647D2260952F0046EA0F /* AJAssetLibraryViewController.m in Sources */,
 				FFB7E2D121CAA0EF0021BB76 /* AJViewController.m in Sources */,
 				FFB7E2BB21CA9FD10021BB76 /* AppDelegate.m in Sources */,
+				309664802260BAFA0046EA0F /* AJAlbumViewController.m in Sources */,
 				30D267D62216A5C900203AE1 /* AJJSCoreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

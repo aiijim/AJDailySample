@@ -26,7 +26,7 @@
     self.navigationController.navigationBar.translucent = NO;
     
     self.dataSource = @[@"CoreGraphics", @"ImageIO", @"CoreImage", @"JavaScriptCore", @"WebKit", @"AssetLibrary", @"PhotoKit", @"GCD", @"RunLoop", @"OCRunTime"];
-    self.targetControllerArr = @[@"AJCoreGraphicsViewController",@"AJImageIOViewController", @"AJCoreImageViewController", @"AJJSCoreViewController", @"AJWKWebViewController"];
+    self.targetControllerArr = @[@"AJCoreGraphicsViewController",@"AJImageIOViewController", @"AJCoreImageViewController", @"AJJSCoreViewController", @"AJWKWebViewController", @"AJAssetLibraryViewController"];
     
     self.tableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
     self.tableView.delegate = self;

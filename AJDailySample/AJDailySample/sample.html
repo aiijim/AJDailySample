@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Native与H5使用AJAX交互</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<script type="text/javascript">
+		function onGetResult()
+		{
+			var xmlHttp = new XMLHttpRequest();
+			xmlHttp.open("Get","http://localhost/getResult",true);
+			xmlHttp.send();
+            xmlHttp.onreadystatechange= function (){
+                if (xmlHttp.readyState==4 && xmlHttp.status==200)
+                {
+                    //var jsonObj = eval("("+xmlHttp.responseText+")");
+                    var jsonObj = JSON.parse(xmlHttp.responseText);
+                    alert(jsonObj["result"]);
+                    document.getElementById("inputText").value=jsonObj["result"];
+                }
+            }
+
+            //var result = '{"code":"我爱北京天安门，天安门上太阳升。"}';
+            //var jsonObj = JSON.parse(result);
+            //var str = '{"name":"jack"}';
+            //var json = JSON.parse(result);
+            //document.getElementById("inputText").value=json["name"];
+		} 
+	</script>
+</head>
+<body>
+    <ul>
+        <li><a href="http://www.tencent.com"><h3>腾讯</h3></a></li>
+        <li><a href="http://www.sohu.com"><h3>搜狐</h3></a></li>
+        <li><a href="http://www.sina.com.cn"><h3>新浪</h3></a></li>
+        <li><a href="http://www.baidu.com"><h3>百度</h3></a></li>
+        <li><a href="http://www.apple.com.cn"><h3>苹果</h3></a></li>
+        <li><a href="http://www.google.com"><h3>谷歌</h3></a></li>
+    </ul>
+	<form>
+		<input type="text" id="inputText" name="inputText" placeholder="please input:" />
+		<input type="button" id="processResult" value="获取结果" onclick="onGetResult()" />
+	</form>
+</body>
+</html>
