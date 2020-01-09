@@ -18,6 +18,9 @@
 		30D267D62216A5C900203AE1 /* AJJSCoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D267D52216A5C900203AE1 /* AJJSCoreViewController.m */; };
 		30D59FC323C581A100C8E13D /* AJMVPPatternViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D59FC223C581A100C8E13D /* AJMVPPatternViewController.m */; };
 		30D59FC623C5821200C8E13D /* AJGreetingPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D59FC523C5821200C8E13D /* AJGreetingPresenter.m */; };
+		30D5A09623C72F7F00C8E13D /* AJMVVMPatternViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D5A09523C72F7F00C8E13D /* AJMVVMPatternViewController.m */; };
+		30D5A09923C7348400C8E13D /* AJMVVMPatternViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D5A09823C7348400C8E13D /* AJMVVMPatternViewModel.m */; };
+		30D5A09C23C7358200C8E13D /* AJMVVMPatternModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D5A09B23C7358200C8E13D /* AJMVVMPatternModel.m */; };
 		FF939C4021FC03A900F55B9C /* AJCoreGraphicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF939C3F21FC03A900F55B9C /* AJCoreGraphicsViewController.m */; };
 		FFB7E2BB21CA9FD10021BB76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB7E2BA21CA9FD10021BB76 /* AppDelegate.m */; };
 		FFB7E2C321CA9FD10021BB76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFB7E2C221CA9FD10021BB76 /* Assets.xcassets */; };
@@ -46,6 +49,12 @@
 		30D59FC223C581A100C8E13D /* AJMVPPatternViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AJMVPPatternViewController.m; sourceTree = "<group>"; };
 		30D59FC423C5821200C8E13D /* AJGreetingPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AJGreetingPresenter.h; sourceTree = "<group>"; };
 		30D59FC523C5821200C8E13D /* AJGreetingPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AJGreetingPresenter.m; sourceTree = "<group>"; };
+		30D5A09423C72F7F00C8E13D /* AJMVVMPatternViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AJMVVMPatternViewController.h; sourceTree = "<group>"; };
+		30D5A09523C72F7F00C8E13D /* AJMVVMPatternViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AJMVVMPatternViewController.m; sourceTree = "<group>"; };
+		30D5A09723C7348400C8E13D /* AJMVVMPatternViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AJMVVMPatternViewModel.h; sourceTree = "<group>"; };
+		30D5A09823C7348400C8E13D /* AJMVVMPatternViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AJMVVMPatternViewModel.m; sourceTree = "<group>"; };
+		30D5A09A23C7358200C8E13D /* AJMVVMPatternModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AJMVVMPatternModel.h; sourceTree = "<group>"; };
+		30D5A09B23C7358200C8E13D /* AJMVVMPatternModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AJMVVMPatternModel.m; sourceTree = "<group>"; };
 		FF939C3E21FC03A900F55B9C /* AJCoreGraphicsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AJCoreGraphicsViewController.h; sourceTree = "<group>"; };
 		FF939C3F21FC03A900F55B9C /* AJCoreGraphicsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AJCoreGraphicsViewController.m; sourceTree = "<group>"; };
 		FFB7E2B621CA9FD10021BB76 /* AJDailySample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AJDailySample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +131,19 @@
 			path = MVPPattern;
 			sourceTree = "<group>";
 		};
+		30D5A09323C72F5A00C8E13D /* MVVMPattern */ = {
+			isa = PBXGroup;
+			children = (
+				30D5A09423C72F7F00C8E13D /* AJMVVMPatternViewController.h */,
+				30D5A09523C72F7F00C8E13D /* AJMVVMPatternViewController.m */,
+				30D5A09723C7348400C8E13D /* AJMVVMPatternViewModel.h */,
+				30D5A09823C7348400C8E13D /* AJMVVMPatternViewModel.m */,
+				30D5A09A23C7358200C8E13D /* AJMVVMPatternModel.h */,
+				30D5A09B23C7358200C8E13D /* AJMVVMPatternModel.m */,
+			);
+			path = MVVMPattern;
+			sourceTree = "<group>";
+		};
 		FF939C3D21FC038200F55B9C /* CoreGraphics */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +172,7 @@
 		FFB7E2B821CA9FD10021BB76 /* AJDailySample */ = {
 			isa = PBXGroup;
 			children = (
+				30D5A09323C72F5A00C8E13D /* MVVMPattern */,
 				30D59FBD23C5812B00C8E13D /* MVPPattern */,
 				3096647A226095130046EA0F /* AssetLibrary */,
 				30D267D32216A5B200203AE1 /* JavascriptCore */,
@@ -254,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF939C4021FC03A900F55B9C /* AJCoreGraphicsViewController.m in Sources */,
+				30D5A09923C7348400C8E13D /* AJMVVMPatternViewModel.m in Sources */,
 				FFB7E2C921CA9FD10021BB76 /* main.m in Sources */,
 				30D59FC323C581A100C8E13D /* AJMVPPatternViewController.m in Sources */,
 				301FCD1722017B0100F3EE4F /* AJCoreImageViewController.m in Sources */,
@@ -263,9 +287,11 @@
 				30D59FC623C5821200C8E13D /* AJGreetingPresenter.m in Sources */,
 				3096647D2260952F0046EA0F /* AJAssetLibraryViewController.m in Sources */,
 				FFB7E2D121CAA0EF0021BB76 /* AJViewController.m in Sources */,
+				30D5A09623C72F7F00C8E13D /* AJMVVMPatternViewController.m in Sources */,
 				FFB7E2BB21CA9FD10021BB76 /* AppDelegate.m in Sources */,
 				309664802260BAFA0046EA0F /* AJAlbumViewController.m in Sources */,
 				30D267D62216A5C900203AE1 /* AJJSCoreViewController.m in Sources */,
+				30D5A09C23C7358200C8E13D /* AJMVVMPatternModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
