@@ -7,7 +7,7 @@
 		function onGetResult()
 		{
 			var xmlHttp = new XMLHttpRequest();
-			xmlHttp.open("Get","http://localhost/getResult",true);
+			xmlHttp.open("get","http://dailysample.custom.com/getResult",true);
 			xmlHttp.send();
             xmlHttp.onreadystatechange= function (){
                 if (xmlHttp.readyState==4 && xmlHttp.status==200)
@@ -18,12 +18,6 @@
                     document.getElementById("inputText").value=jsonObj["result"];
                 }
             }
-
-            //var result = '{"code":"我爱北京天安门，天安门上太阳升。"}';
-            //var jsonObj = JSON.parse(result);
-            //var str = '{"name":"jack"}';
-            //var json = JSON.parse(result);
-            //document.getElementById("inputText").value=json["name"];
 		} 
 	</script>
 </head>

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define    DUMMY_DOMAIN     @"dailysample.custom.com"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AJCustomProtocol : NSURLProtocol

@@ -30,7 +30,7 @@ SEL WK_UnregisterSchemeSelector() {
 
 + (BOOL)canInitWithRequest:(NSURLRequest *)request
 {
-    if ([[[request URL] host] isEqualToString:@"localhost"])
+    if ([[[request URL] host] isEqualToString:DUMMY_DOMAIN])
     {
         return YES;
     }
@@ -50,14 +50,24 @@ SEL WK_UnregisterSchemeSelector() {
 - (void)startLoading
 {
     NSLog(@"startLoading");
-    NSString* resultString = @"{\"result\":\"我爱北京天安门，天安门上太阳升。\"}";
-    NSData* resultData = [resultString dataUsingEncoding:NSUTF8StringEncoding];
+    NSData* resultData = nil;
+    NSString* path = [[self.request URL] path];
+    if ([path isEqualToString:@"/sample.html"]) {
+        NSString* docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+        NSString* htmlPath = [docPath stringByAppendingPathComponent:@"sample.html"];
+        resultData = [NSData dataWithContentsOfFile:htmlPath];
+    } else if([path isEqualToString:@"/getResult"]) {
+        NSString* resultString = @"{\"result\":\"我爱北京天安门，天安门上太阳升。\"}";
+        resultData = [resultString dataUsingEncoding:NSUTF8StringEncoding];
+    }
+    
     NSMutableDictionary* headers = [[NSMutableDictionary alloc] init];
     NSString* lenString = [NSString stringWithFormat:@"%zd",[resultData length]];
     [headers setObject:lenString forKey:@"Content-Length"];
-    [headers setObject:@"Access-Control-Allow-Origin" forKey:@"*"];
+//    [headers setObject:@"Access-Control-Allow-Origin" forKey:@"*"];
+//    [headers setObject:@"http://www.qq.com" forKey:@"Origin"];
     NSHTTPURLResponse* response = [[NSHTTPURLResponse alloc] initWithURL:[self.request URL] statusCode:200 HTTPVersion:@"HTTP/1.1" headerFields:headers];
-    
+        
     [self.client URLProtocol:self didReceiveResponse:response cacheStoragePolicy:NSURLCacheStorageNotAllowed];
     [self.client URLProtocol:self didLoadData:resultData];
     [self.client URLProtocolDidFinishLoading:self];

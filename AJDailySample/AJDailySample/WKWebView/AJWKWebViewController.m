@@ -30,7 +30,7 @@
 
 @end
 
-@interface AJWKWebViewController ()<UITextFieldDelegate, WKNavigationDelegate,WKScriptMessageHandler, WKURLSchemeHandler>
+@interface AJWKWebViewController ()<UITextFieldDelegate, WKNavigationDelegate,WKScriptMessageHandler, WKURLSchemeHandler, WKUIDelegate>
 
 @property (nonatomic, strong) WKWebView* webView;
 @property (nonatomic, strong) MYTextField* textField;
@@ -96,6 +96,7 @@
 //    [configuration setURLSchemeHandler:self forURLScheme:@"jsbridge"];
     self.webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:configuration];
     self.webView.navigationDelegate = self;
+    self.webView.UIDelegate = self;
     self.webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view insertSubview:self.webView belowSubview:self.progressView];
     
@@ -104,9 +105,11 @@
     
 //    BOOL isHandled = [WKWebView handlesURLScheme:@"jsbridge"];
     
-    NSString * htmlPath = [[self docPath] stringByAppendingPathComponent:@"sample.html"];
+//    NSString * htmlPath = [[self docPath] stringByAppendingPathComponent:@"sample.html"];
 //    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:htmlPath]]];
-    [self.webView loadFileURL:[NSURL fileURLWithPath:htmlPath] allowingReadAccessToURL:[NSURL fileURLWithPath:[self docPath]]];
+//    [self.webView loadFileURL:[NSURL fileURLWithPath:htmlPath] allowingReadAccessToURL:[NSURL fileURLWithPath:[self docPath]]];
+    NSString* dummyURL = [NSString stringWithFormat:@"http://%@/%@", DUMMY_DOMAIN, @"sample.html"];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:dummyURL]]];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
@@ -235,6 +238,11 @@
 - (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView
 {
     NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler {
+    [self showMessage:message];
+    completionHandler();
 }
 
 #pragma mark -- private
