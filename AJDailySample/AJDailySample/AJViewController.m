@@ -25,8 +25,8 @@
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationController.navigationBar.translucent = NO;
     
-    self.dataSource = @[@"MVVMPattern",@"MVPPattern",@"CoreGraphics", @"ImageIO", @"CoreImage", @"JavaScriptCore", @"WebKit", @"AssetLibrary", @"PhotoKit", @"GCD", @"RunLoop", @"OCRunTime"];
-    self.targetControllerArr = @[@"AJMVVMPatternViewController",@"AJMVPPatternViewController",@"AJCoreGraphicsViewController",@"AJImageIOViewController", @"AJCoreImageViewController", @"AJJSCoreViewController", @"AJWKWebViewController", @"AJAssetLibraryViewController"];
+    self.dataSource = @[@"KeyChain",@"MVVMPattern",@"MVPPattern",@"CoreGraphics", @"ImageIO", @"CoreImage", @"JavaScriptCore", @"WebKit", @"AssetLibrary", @"PhotoKit", @"GCD", @"RunLoop", @"OCRunTime"];
+    self.targetControllerArr = @[@"AJKeyChainViewController",@"AJMVVMPatternViewController",@"AJMVPPatternViewController",@"AJCoreGraphicsViewController",@"AJImageIOViewController", @"AJCoreImageViewController", @"AJJSCoreViewController", @"AJWKWebViewController", @"AJAssetLibraryViewController"];
     
     self.tableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
     self.tableView.delegate = self;

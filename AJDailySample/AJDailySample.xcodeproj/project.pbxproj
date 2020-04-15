@@ -21,6 +21,7 @@
 		30D5A09623C72F7F00C8E13D /* AJMVVMPatternViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D5A09523C72F7F00C8E13D /* AJMVVMPatternViewController.m */; };
 		30D5A09923C7348400C8E13D /* AJMVVMPatternViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D5A09823C7348400C8E13D /* AJMVVMPatternViewModel.m */; };
 		30D5A09C23C7358200C8E13D /* AJMVVMPatternModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D5A09B23C7358200C8E13D /* AJMVVMPatternModel.m */; };
+		30FEDB0A2446FD9C00293164 /* AJKeyChainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FEDB092446FD9C00293164 /* AJKeyChainViewController.m */; };
 		FF939C4021FC03A900F55B9C /* AJCoreGraphicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF939C3F21FC03A900F55B9C /* AJCoreGraphicsViewController.m */; };
 		FFB7E2BB21CA9FD10021BB76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB7E2BA21CA9FD10021BB76 /* AppDelegate.m */; };
 		FFB7E2C321CA9FD10021BB76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFB7E2C221CA9FD10021BB76 /* Assets.xcassets */; };
@@ -55,6 +56,8 @@
 		30D5A09823C7348400C8E13D /* AJMVVMPatternViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AJMVVMPatternViewModel.m; sourceTree = "<group>"; };
 		30D5A09A23C7358200C8E13D /* AJMVVMPatternModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AJMVVMPatternModel.h; sourceTree = "<group>"; };
 		30D5A09B23C7358200C8E13D /* AJMVVMPatternModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AJMVVMPatternModel.m; sourceTree = "<group>"; };
+		30FEDB082446FD9C00293164 /* AJKeyChainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AJKeyChainViewController.h; sourceTree = "<group>"; };
+		30FEDB092446FD9C00293164 /* AJKeyChainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AJKeyChainViewController.m; sourceTree = "<group>"; };
 		FF939C3E21FC03A900F55B9C /* AJCoreGraphicsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AJCoreGraphicsViewController.h; sourceTree = "<group>"; };
 		FF939C3F21FC03A900F55B9C /* AJCoreGraphicsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AJCoreGraphicsViewController.m; sourceTree = "<group>"; };
 		FFB7E2B621CA9FD10021BB76 /* AJDailySample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AJDailySample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +147,15 @@
 			path = MVVMPattern;
 			sourceTree = "<group>";
 		};
+		30FEDB072446FD8800293164 /* KeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				30FEDB082446FD9C00293164 /* AJKeyChainViewController.h */,
+				30FEDB092446FD9C00293164 /* AJKeyChainViewController.m */,
+			);
+			path = KeyChain;
+			sourceTree = "<group>";
+		};
 		FF939C3D21FC038200F55B9C /* CoreGraphics */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +184,7 @@
 		FFB7E2B821CA9FD10021BB76 /* AJDailySample */ = {
 			isa = PBXGroup;
 			children = (
+				30FEDB072446FD8800293164 /* KeyChain */,
 				30D5A09323C72F5A00C8E13D /* MVVMPattern */,
 				30D59FBD23C5812B00C8E13D /* MVPPattern */,
 				3096647A226095130046EA0F /* AssetLibrary */,
@@ -283,6 +296,7 @@
 				301FCD1722017B0100F3EE4F /* AJCoreImageViewController.m in Sources */,
 				30872CA922490CFF006607BE /* AJCustomProtocol.m in Sources */,
 				301A89632246502700309490 /* AJWKWebViewController.m in Sources */,
+				30FEDB0A2446FD9C00293164 /* AJKeyChainViewController.m in Sources */,
 				FFC426F921CBF330007CE746 /* AJImageIOViewController.m in Sources */,
 				30D59FC623C5821200C8E13D /* AJGreetingPresenter.m in Sources */,
 				3096647D2260952F0046EA0F /* AJAssetLibraryViewController.m in Sources */,

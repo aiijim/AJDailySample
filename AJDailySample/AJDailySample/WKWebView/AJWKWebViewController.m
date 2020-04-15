@@ -168,12 +168,12 @@
 #pragma mark - WKURLSchemeHandler
 
 - (void)webView:(WKWebView *)webView startURLSchemeTask:(id <WKURLSchemeTask>)urlSchemeTask
-{
+API_AVAILABLE(ios(11.0)){
     
 }
 
 - (void)webView:(WKWebView *)webView stopURLSchemeTask:(id <WKURLSchemeTask>)urlSchemeTask
-{
+API_AVAILABLE(ios(11.0)){
     
 }
 

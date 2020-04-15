@@ -65,7 +65,6 @@ SEL WK_UnregisterSchemeSelector() {
     NSString* lenString = [NSString stringWithFormat:@"%zd",[resultData length]];
     [headers setObject:lenString forKey:@"Content-Length"];
 //    [headers setObject:@"Access-Control-Allow-Origin" forKey:@"*"];
-//    [headers setObject:@"http://www.qq.com" forKey:@"Origin"];
     NSHTTPURLResponse* response = [[NSHTTPURLResponse alloc] initWithURL:[self.request URL] statusCode:200 HTTPVersion:@"HTTP/1.1" headerFields:headers];
         
     [self.client URLProtocol:self didReceiveResponse:response cacheStoragePolicy:NSURLCacheStorageNotAllowed];
